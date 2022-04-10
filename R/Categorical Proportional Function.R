@@ -4,6 +4,7 @@
 #'
 #' Visualize and understand the proportion of each category within variables defined as character for a given dataset
 #' @param df The input dataframe
+#' @param colstoremove Any columns specified to be removed from the original dataframe before running analysis
 #' @print The resulting proportions as printed dataframes and ggplot visualizations of the resulting proportional dataframes
 #' @export
 
