@@ -8,6 +8,8 @@ categoricalsummary(df, colstoremove = NULL)
 }
 \arguments{
 \item{df}{The input dataframe}
+
+\item{colstoremove}{Any columns specified to be removed from the original dataframe before running analysis}
 }
 \description{
 Visualize and understand the proportion of each category within variables defined as character for a given dataset
