@@ -4,13 +4,15 @@
 \alias{nafinder}
 \title{NA Finder Summary}
 \usage{
-nafinder(df, colstoremove = NULL)
+nafinder(df, colstoremove = NULL, Nulls = FALSE)
 }
 \arguments{
 \item{df}{The input dataframe}
 
 \item{colstoremove}{Any columns specified to be removed from the original dataframe before running analysis}
+
+\item{Nulls}{If TRUE, will also look for strings equal to "NULL" and treat those rows as missing values, along with rows containing NA's}
 }
 \description{
-Find the percentage of values that are NA/missing for each column in a dataframe
+Find the percentage of values that are NA/missing/"NULL" for each column in a dataframe
 }
