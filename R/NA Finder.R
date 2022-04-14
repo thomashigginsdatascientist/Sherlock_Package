@@ -1,15 +1,15 @@
 
 
-#' NA Finder Summary
+#' na_finder
 #'
-#' Find the percentage of values that are NA/missing for each column in a dataframe
-#' @param df The input dataframe
-#' @param colstoremove Any columns specified to be removed from the original dataframe before running analysis
+#' Find the percentage of values that are NA/missing for each column in a data frame
+#' @param df The input data frame
+#' @param colstoremove Any columns specified to be removed from the original data frame before running analysis
 #' @param Nulls If TRUE, will also look for strings equal to "NULL" and treat those rows as missing values, along with rows containing NA's
-#' @print A single dataframe containing the percentage of NA values for each column in df and a ggplot visualization of this resulting dataframe
-#' @export
+#' @print A single data frame containing the percentage of NA values for each column in df and a ggplot visualization of this resulting data frame
 
-nafinder <- function(df, colstoremove=NULL, Nulls = FALSE){
+
+na_finder <- function(df, colstoremove=NULL, Nulls = FALSE){
   
   if(Nulls == FALSE){
   
@@ -65,6 +65,7 @@ nafinder <- function(df, colstoremove=NULL, Nulls = FALSE){
             axis.text.x= element_text(size = 15),
             axis.text.y= element_text(size = 15)
           ) +
+          theme_minimal() +
           guides(fill=guide_legend(empty$Column.Name)) +
           scale_y_continuous(labels = scales::percent_format(big.mark = ',', decimal.mark = '.'))
   )

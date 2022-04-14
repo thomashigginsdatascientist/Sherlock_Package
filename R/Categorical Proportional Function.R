@@ -2,13 +2,13 @@
 
 #' Categorical Proportional Summary
 #'
-#' Visualize and understand the proportion of each category within variables defined as character for a given dataset
-#' @param df The input dataframe
-#' @param colstoremove Any columns specified to be removed from the original dataframe before running analysis
-#' @print The resulting proportions as printed dataframes and ggplot visualizations of the resulting proportional dataframes
+#' Visualize and understand the proportion of each category within variables defined as character for a given data frame
+#' @param df The input data frame
+#' @param colstoremove Any columns specified to be removed from the original data frame before running analysis
+#' @print The resulting proportions as printed data frames and ggplot visualizations of the resulting proportional data frames
 #' @export
 
-categoricalsummary <- function(df, colstoremove = NULL){
+categorical_summary <- function(df, colstoremove = NULL){
   
   library(tidyverse)
   library(ggplot2)
@@ -41,6 +41,7 @@ categoricalsummary <- function(df, colstoremove = NULL){
               axis.text.x= element_text(size = 15),
               axis.text.y= element_text(size = 15)
             ) +
+            theme_minimal() +
             guides(fill=guide_legend(i)) +
             scale_y_continuous(labels = scales::percent_format(big.mark = ',', decimal.mark = '.'))
     )
