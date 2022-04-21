@@ -20,11 +20,18 @@ categorical_summary <- function(df, colstoremove = NULL){
   data <- data[ , !colnames(data) %in% colstoremove]
   string <- colnames(data)
   
-  for (i in string) {
+  for (i in 1:length(string)) {
     
-    df <- table(data[,i])
+    df <- table(data[,(string[i])])
     df <- round(prop.table(df), 3)
     df <- as.data.frame(df)
+    
+    if(nrow(df) > 25){
+      
+      df$Freq <- percent(df$Freq)
+      print(df)
+  
+    }else{
     
     print(ggplot(data = df, aes(x=Var1, y=Freq, fill = Var1)) +
             geom_col() +
@@ -48,5 +55,7 @@ categorical_summary <- function(df, colstoremove = NULL){
     
     df$Freq <- percent(df$Freq)
     print(df)
+    }
   }
 }
+
