@@ -1,5 +1,5 @@
 
-#' kmeans_all
+#' find_kmeans
 #'
 #' Apply the kmeans clustering algorithm to any data set and visualize commonalities between different categorical variables within each cluster. This function will automatically select the best number of clusters to apply to the data set by measuring the difference between each additional clsuter added to the analysis.
 #' @param df The input data frame
@@ -7,7 +7,7 @@
 
 
 
-kmeans_all <- function(df){
+find_kmeans <- function(df){
   
   library(tidyverse)
   
