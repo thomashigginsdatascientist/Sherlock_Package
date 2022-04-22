@@ -19,3 +19,8 @@ A single data frame containing the percentage of NA values for each column in df
 \description{
 Find the percentage of values that are NA/missing for each column in a data frame
 }
+\examples{
+library(Sherlock)
+data("flights")
+na_finder(df = flights, Nulls = TRUE) #will treat the string "NULL" as a missing value
+}

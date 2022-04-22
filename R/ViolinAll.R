@@ -8,7 +8,7 @@
 #' @param numericcolumn The numeric variable to be compared against each categorical variable
 #' @param colstoremove Any columns specified to be removed from the original data frame before running analysis
 #' @return A ggplot violin plot visualization for each categorical variable against the specified numeric variable in the data frame
-#' #' @examples
+#' @examples
 #' library(Sherlock)
 #' data("flights")
 #' violin_all(df = flights, numericcolumn = "air_time")

@@ -2,7 +2,7 @@
 % Please edit documentation in R/Categorical Proportional Function.R
 \name{categorical_summary}
 \alias{categorical_summary}
-\title{Categorical Proportional Summary}
+\title{categorical_summary}
 \usage{
 categorical_summary(df, colstoremove = NULL)
 }
@@ -16,4 +16,9 @@ The resulting proportions as printed data frames and ggplot visualizations of th
 }
 \description{
 Visualize and understand the proportion of each category within variables defined as character for a given data frame
+}
+\examples{
+library(Sherlock)
+data("flights")
+categorical_summary(df = flights)
 }
