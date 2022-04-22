@@ -1,10 +1,10 @@
 
-#' find_kmeans
+#' kmeans_finder
 #'
 #' Apply the kmeans clustering algorithm to any data set and visualize commonalities between different categorical variables within each cluster. This function will automatically select the best number of clusters to apply to the data set by measuring the difference between each additional clsuter added to the analysis.
 #' @param df The input data frame
 #' @print First, the total number of clusters found and the number of rows per cluster will be displayed in the console. Then, the proportion for each categorical variable within each cluster will be displayed both graphically and visually in the console.  
-
+#' @export
 
 
 find_kmeans <- function(df){

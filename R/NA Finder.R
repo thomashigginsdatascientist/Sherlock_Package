@@ -7,7 +7,7 @@
 #' @param colstoremove Any columns specified to be removed from the original data frame before running analysis
 #' @param Nulls If TRUE, will also look for strings equal to "NULL" and treat those rows as missing values, along with rows containing NA's
 #' @print A single data frame containing the percentage of NA values for each column in df and a ggplot visualization of this resulting data frame
-
+#' @export
 
 na_finder <- function(df, colstoremove=NULL, Nulls = FALSE){
   

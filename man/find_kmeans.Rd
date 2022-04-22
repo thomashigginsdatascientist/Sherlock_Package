@@ -2,7 +2,7 @@
 % Please edit documentation in R/KmeansAll.R
 \name{find_kmeans}
 \alias{find_kmeans}
-\title{find_kmeans}
+\title{kmeans_finder}
 \usage{
 find_kmeans(df)
 }
