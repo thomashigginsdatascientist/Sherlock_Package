@@ -30,6 +30,12 @@ violin_all <- function(df, numericcolumn, colstoremove = NULL){
     df$Val <- numbers$Val
     colnames(df) <- c("Var1", "Value")
     
+    if(length(unique(df$Var1)) > 50){
+      
+      print(paste0("There are more than 50 unique categories, so this column will be ignored: ", i))
+      
+    }else{
+    
     print(ggplot(data = df, aes(x=Var1, y=Value, fill = Var1)) +
             geom_violin() +
             #geom_boxplot(width=0.1, color="grey", alpha=0.2) +
@@ -49,7 +55,8 @@ violin_all <- function(df, numericcolumn, colstoremove = NULL){
             theme_minimal() +
             guides(fill=guide_legend(i)) +
             scale_y_continuous(labels = scales::comma_format(big.mark = ',', decimal.mark = '.'))
-    )
+      )
+    }
   }
 }
 
