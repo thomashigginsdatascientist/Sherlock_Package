@@ -3,4 +3,3 @@
 export(categorical_summary)
 export(find_kmeans)
 export(na_finder)
-export(violin_all)

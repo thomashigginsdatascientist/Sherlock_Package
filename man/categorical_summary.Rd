@@ -11,6 +11,9 @@ categorical_summary(df, colstoremove = NULL)
 
 \item{colstoremove}{Any columns specified to be removed from the original data frame before running analysis}
 }
+\value{
+The resulting proportions as printed data frames and ggplot visualizations of the resulting proportional data frames
+}
 \description{
 Visualize and understand the proportion of each category within variables defined as character for a given data frame
 }

@@ -4,7 +4,7 @@
 \alias{na_finder}
 \title{na_finder}
 \usage{
-na_finder(df, colstoremove = NULL, Nulls = FALSE)
+na_finder(df, colstoremove=NULL, Nulls = FALSE)
 }
 \arguments{
 \item{df}{The input data frame}
@@ -12,6 +12,9 @@ na_finder(df, colstoremove = NULL, Nulls = FALSE)
 \item{colstoremove}{Any columns specified to be removed from the original data frame before running analysis}
 
 \item{Nulls}{If TRUE, will also look for strings equal to "NULL" and treat those rows as missing values, along with rows containing NA's}
+}
+\value{
+A single data frame containing the percentage of NA values for each column in df and a ggplot visualization of this resulting data frame
 }
 \description{
 Find the percentage of values that are NA/missing for each column in a data frame

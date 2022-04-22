@@ -3,9 +3,10 @@
 #' Categorical Proportional Summary
 #'
 #' Visualize and understand the proportion of each category within variables defined as character for a given data frame
+#' @usage categorical_summary(df, colstoremove = NULL)
 #' @param df The input data frame
 #' @param colstoremove Any columns specified to be removed from the original data frame before running analysis
-#' @print The resulting proportions as printed data frames and ggplot visualizations of the resulting proportional data frames
+#' @return The resulting proportions as printed data frames and ggplot visualizations of the resulting proportional data frames
 #' @export
 
 categorical_summary <- function(df, colstoremove = NULL){
