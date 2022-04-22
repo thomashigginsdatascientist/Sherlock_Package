@@ -15,6 +15,8 @@ violin_all(df, numericcolumn, colstoremove = NULL)
 }
 \value{
 A ggplot violin plot visualization for each categorical variable against the specified numeric variable in the data frame
+#' @examples
+violin_all(df = flights, numericcolumn = "air_time")
 }
 \description{
 Create violin plots for each categorical variable in a data frame against a given numerical variable

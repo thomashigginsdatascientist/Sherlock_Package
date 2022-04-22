@@ -8,7 +8,7 @@
 #' @export
 
 
-find_kmeans <- function(df){
+kmeans_finder <- function(df){
   
   library(tidyverse)
   
