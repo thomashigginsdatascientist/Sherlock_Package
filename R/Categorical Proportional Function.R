@@ -20,16 +20,20 @@ categorical_summary <- function(df, colstoremove = NULL){
   library(scales)
   
   data <- df %>%
+    mutate_if(is_integer, function(x) as.character(x)) %>%
+    mutate_if(is_numeric, function(x) as.character(x)) %>%
+    mutate_if(is.factor, function(x) as.charcater(x)) %>%
     select_if(is.character)
   
   data <- data[ , !colnames(data) %in% colstoremove]
   string <- colnames(data)
   
   for (i in 1:length(string)) {
-    
+    label <- string[i]
     df <- table(data[,(string[i])])
     df <- round(prop.table(df), 3)
     df <- as.data.frame(df)
+    colnames(df)[1] <- "Var1"
     
     if(nrow(df) > 25){
       
@@ -42,7 +46,7 @@ categorical_summary <- function(df, colstoremove = NULL){
             geom_col() +
             geom_text(data=df, aes(x=Var1, y=Freq, label = percent(Freq)), vjust = 1.5, size = 5) +
             labs(
-              x = i,
+              x = label,
               y = "Percentage of Dataset",
             ) +
             theme(
@@ -54,7 +58,7 @@ categorical_summary <- function(df, colstoremove = NULL){
               axis.text.y= element_text(size = 15)
             ) +
             theme_minimal() +
-            guides(fill=guide_legend(i)) +
+            guides(fill=guide_legend(label)) +
             scale_y_continuous(labels = scales::percent_format(big.mark = ',', decimal.mark = '.'))
     )
     
