@@ -21,6 +21,9 @@ violin_all <- function(df, numericcolumn, colstoremove = NULL){
   library(scales)
   
   data <- df %>%
+    mutate_if(is_integer, function(x) as.character(x)) %>%
+    mutate_if(is_numeric, function(x) as.character(x)) %>%
+    mutate_if(is.factor, function(x) as.charcater(x)) %>%
     select_if(is.character)
   
   data <- data[ , !colnames(data) %in% colstoremove]
